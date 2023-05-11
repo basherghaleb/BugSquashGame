@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bug-squash level="Boss Level">
+  <program name="Luck" x="833" y="500">
+    <bug type="null" x="500" y="-100" speed="125" start="0"/>
+    <bug type="garbage" x="1350" y="1300" speed="100" start="3"/>
+    <bug type="garbage" x="-100" y="900" speed="60" start="5">
+      <code pass="bool.*mShrank.*=.*(true|false).*;"><![CDATA[/**
+ * Game Class
+ */
+class Game
+{
+private:
+    ///If the screen should be shrunk
+    bool mShrank;
+
+public:
+    Game();
+    void OnLeftDown(int x, int y);
+    void OnMouseDoubleClick(int x, int y, wxWindow* = nullptr);
+    void OnDraw(std::shared_ptr<wxGraphicsContext> graphics, int width, int height);
+    void Update(double elapsed);
+    void SetLevel(int level);
+};
+]]></code>
+    </bug>
+    <feature x="200" y="-100" speed="160" start="6"/>
+    <feature x="1400" y="900" speed="160" start="6"/>
+    <bug type="redundancy" x="-100" y="500" speed="85" start="7"/>
+    <bug type="null" x="1000" y="-200" speed="100" start="9"/>
+    <bug type="boss" x="-100" y="-100" speed="50" start="10"/>
+    <feature x="1400" y="500" speed="160" start="13"/>
+    <bug type="null" x="500" y="-100" speed="120" start="15"/>
+    <bug type="boss" x="1300" y="-100" speed="45" start="18"/>
+    <bug type="null" x="-100" y="-100" speed="75" start="20"/>
+  </program>
+
+  <program name="Good" x="417" y="500">
+    <bug type="redundancy" x="1350" y="500" speed="100" start="1"/>
+    <bug type="null" x="500" y="-100" speed="100" start="2"/>
+    <feature x="200" y="-100" speed="160" start="3"/>
+    <bug type="boss" x="-100" y="1300" speed="50" start="4"/>
+    <bug type="garbage" x="-100" y="100" speed="120" start="6"/>
+    <bug type="null" x="1000" y="1200" speed="100" start="8"/>
+    <bug type="null" x="1000" y="1180" speed="80" start="9"/>
+    <bug type="null" x="-100" y="1150" speed="80" start="12">
+      <code pass="if.*\(.*code.*!=.*nullptr.*\).*\n.*{.*\n.*mCode.*=.*code->GetContent\(\);.*\n.*"><![CDATA[
+auto code = node->GetChildren();
+
+mCode = code->GetContent();
+
+break;
+]]> </code>
+    </bug>
+    <feature x="200" y="-700" speed="150" start="13"/>
+    <feature x="-100" y="-100" speed="170" start="14"/>
+    <bug type="garbage" x="-500" y="100" speed="110" start="17"/>
+  </program>
+</bug-squash>

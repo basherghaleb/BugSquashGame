@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bug-squash level="One Bug">
+    <program name="Bug Squash" x="1000" y="500">
+        <bug type="garbage" x="-100" y="200" speed="120" start="0"/>
+    </program>
+</bug-squash>
