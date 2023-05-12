@@ -17,3 +17,6 @@ development of the project.
 2. Install CMake, visit here for more information: https://cmake.org/download/
 3. Install wxWidgets, visit here for more information: https://wiki.wxwidgets.org/Install
 4. To run, simply right click on CMakeLists.txt and press "Load CMake Project"
+
+
+<img width="1014" alt="BugSquash" src="https://github.com/basherghaleb/BugSquashGame/assets/114628173/ea43b32c-6315-414e-90d9-ab1ef3cd8fa5">
